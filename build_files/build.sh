@@ -10,7 +10,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux 
+#dnf5 install -y tmux
 
 # Use a COPR Example:
 #
@@ -21,4 +21,13 @@ dnf5 install -y tmux
 
 #### Example for enabling a System Unit File
 
-systemctl enable podman.socket
+#systemctl enable podman.socket
+
+dnf5 -y install firefox
+dnf5 -y install thunderbird
+dnf5 -y copr enable celenity/copr
+dnf5 -y install phoenix
+dnf5 -y install dove
+dnf5 -y copr disable celenity/copr
+dnf5 -y config-manager addrepo --from-repofile=https://repo.secureblue.dev/secureblue.repo
+dnf5 -y install trivalent.x86_64
