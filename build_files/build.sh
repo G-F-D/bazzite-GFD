@@ -23,9 +23,14 @@ set -ouex pipefail
 
 #systemctl enable podman.socket
 
+dnf5 -y config-manager addrepo --id=mozilla --set=baseurl=https://packages.mozilla.org/rpm/firefox --set=gpgkey=https://packages.mozilla.org/rpm/firefox/signing-key.gpg --set=gpgcheck=1 --set=repo_gpgcheck=0 --set=priority=10
+dnf5 -y install firefox
+dnf5 -y install thunderbird
+dnf5 -y config-manager disable mozilla
+
 dnf5 -y copr enable celenity/copr
-dnf5 -y install phoenix-flatpak
-dnf5 -y install dove-flatpak
+dnf5 -y install phoenix
+dnf5 -y install dove
 dnf5 -y copr disable celenity/copr
 
 dnf5 -y config-manager addrepo --from-repofile=https://repo.secureblue.dev/secureblue.repo
