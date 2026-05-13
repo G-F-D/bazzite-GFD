@@ -31,3 +31,4 @@ dnf5 -y install dove
 dnf5 -y copr disable celenity/copr
 dnf5 -y config-manager addrepo --from-repofile=https://repo.secureblue.dev/secureblue.repo
 dnf5 -y install trivalent.x86_64
+dnf5 -y config-manager disable secureblue
